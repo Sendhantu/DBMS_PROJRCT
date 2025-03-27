@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightgrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .login-card {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        .info-card {
+            background-color: #f7f7f7;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: black;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        td {
+            color: black;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        .info-card p {
+            margin: 8px 0;
+            line-height: 1.4;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .login-card, .info-card {
+                width: 90%;
+                padding: 20px;
+            }
+            td {
+                font-size: 16px;
+            }
+            input[type="text"], input[type="password"] {
+                font-size: 14px;
+            }
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="error-message">
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/studentmainpage" method="POST">
+        <table class="login-card">
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <h1>Login Page</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="Username" placeholder="Enter Username" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="Password" placeholder="Enter Password" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Login</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="info-card">
+        <p>Dear Students,</p>
+        <p>You can access the student portal to view your academic and financial details.</p>
+        <p>Use your ID Number and Password to log in.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Data</title>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        table{
+            background-color: white;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        button{
+            width: 100px;
+            padding: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Student Data</h1>
+    <table>
+        <tr>
+            <th>Reg No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{student[0]}}</td>
+            <td>{{student[1]}}</td>
+            <td>{{student[2]}}</td>
+            <td>{{student[3]}}</td>
+            <td>{{student[4]}}</td>
+            <td>{{student[5]}}</td>
+            <td>{{student[6]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<button onclick="window.location.href='/returnfromadminstudentdata'">Return</button>
+</center>
+</body>
+</html>

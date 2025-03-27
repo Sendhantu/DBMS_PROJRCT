@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .admin-container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: black;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: black;
+            font-size: 22px;
+            margin: 20px 0 10px 0;
+        }
+        button {
+            background-color: white;
+            color: black;
+            width: 180px;
+            height: 50px;
+            font-size: 18px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin Dashboard</h1>
+
+        <h3>Create New Student Account</h3>
+        <form action="/Stusignup">
+            <button type="submit">New Registration</button>
+        </form>
+
+        <h3>See the Registration Number</h3>
+        <form action="/viewdata">
+            <button type="submit">View Registrations</button>
+        </form>
+    </div>
+</body>
+</html>

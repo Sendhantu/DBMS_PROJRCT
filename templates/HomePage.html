@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <style>
+        body {
+            background-color: lightgrey;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        button {
+            background-color: white;
+            font-size: larger;
+            padding: 14px 28px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            cursor: pointer;
+            width: 220px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to College Portal</h1>
+        <form>
+            <button type="button" onclick="window.location.href='{{ url_for('studentlogin') }}';">Student Login</button><br>
+            <button type="button" onclick="window.location.href='{{ url_for('admin') }}';">Admin Login</button>
+        </form>
+    </div>
+</body>
+</html>

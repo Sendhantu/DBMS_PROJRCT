@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #aaa;
+        }
+        h2 {
+            color: #333;
+        }
+        .details {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .details p {
+            font-size: 18px;
+            padding: 5px;
+        }
+        .logout-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome, {{ values[1] }} {{ values[2] }}</h2>
+
+        <div class="details">
+            <p><strong>Student ID:</strong> {{ values[0] }}</p>
+            <p><strong>First Name:</strong> {{ values[1] }}</p>
+            <p><strong>Last Name:</strong> {{ values[2] }}</p>
+            <p><strong>Date of Birth:</strong> {{ values[3] }}</p>
+            <p><strong>Email:</strong> {{ values[4] }}</p>
+        </div>
+
+        <a href="{{ url_for('studentlogin') }}" class="logout-btn">Logout</a>
+    </div>
+
+</body>
+</html>
